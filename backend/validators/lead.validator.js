@@ -14,10 +14,20 @@ export const createLeadSchema = Joi.object({
     "any.required": "Email is required",
   }),
 
-  budgetRange: Joi.string().trim().required().messages({
-    "string.empty": "Budget range is required",
-    "any.required": "Budget range is required",
-  }),
+  budgetRange: Joi.string()
+    .valid(
+      "$1,000 - $5,000",
+      "$5,000 - $10,000",
+      "$10,000 - $25,000",
+      "$25,000+"
+    )
+    .required()
+    .messages({
+      "any.only":
+        "Please select a valid budget range",
+      "any.required":
+        "Budget range is required",
+    }),
 
   message: Joi.string().trim().min(10).max(2000).required().messages({
     "string.empty": "Message is required",

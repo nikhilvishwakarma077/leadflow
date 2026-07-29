@@ -30,15 +30,10 @@ export const loginAdmin = async (req, res) => {
       });
     }
 
-    // Create JWT
     const token = jwt.sign(
-      {
-        adminId: admin._id,
-      },
+      {adminId: admin._id,},
       process.env.JWT_SECRET,
-      {
-        expiresIn: "1d",
-      }
+      {expiresIn: "1d"}
     );
 
     // Store JWT in HttpOnly cookie

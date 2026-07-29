@@ -13,14 +13,9 @@ export const protect = async (req, res, next) => {
       });
     }
 
-    const decoded = jwt.verify(
-      token,
-      process.env.JWT_SECRET
-    );
+    const decoded = jwt.verify(token,process.env.JWT_SECRET);
 
-    const admin = await Admin.findById(decoded.adminId).select(
-      "-password"
-    );
+    const admin = await Admin.findById(decoded.adminId).select("-password");
 
     if (!admin) {
       return res.status(401).json({

@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 import Lead from "../models/Lead.js";
 
-// Create a new lead
+
+
 export const createLead = async (req, res) => {
   try {
     const { name, email, budgetRange, message } = req.body;
@@ -29,24 +30,25 @@ export const createLead = async (req, res) => {
 };
 
 
-// Get all leads + search
 export const getLeads = async (req, res) => {
   try {
-    const { search,status } = req.query;
+    const { search, status } = req.query;
 
     const filter = {};
 
-    if (search) {
+    if (search?.trim()) {
+      const searchTerm = search.trim();
+
       filter.$or = [
         {
           name: {
-            $regex: search,
+            $regex: searchTerm,
             $options: "i",
           },
         },
         {
           email: {
-            $regex: search,
+            $regex: searchTerm,
             $options: "i",
           },
         },
@@ -54,22 +56,39 @@ export const getLeads = async (req, res) => {
     }
 
     if (status) {
-            filter.status = status;
-        }
+      const validStatuses = [
+        "New",
+        "Contacted",
+        "Closed",
+      ];
+
+      if (!validStatuses.includes(status)) {
+        return res.status(400).json({
+          success: false,
+          message:
+            "Invalid status. Allowed values are New, Contacted, and Closed",
+        });
+      }
+
+      filter.status = status;
+    }
 
     const leads = await Lead.find(filter).sort({
       createdAt: -1,
     });
 
-    res.status(200).json({
+    return res.status(200).json({
       success: true,
       count: leads.length,
       leads,
     });
   } catch (error) {
-    console.error("Get leads error:", error.message);
+    console.error(
+      "Get leads error:",
+      error.message
+    );
 
-    res.status(500).json({
+    return res.status(500).json({
       success: false,
       message: "Failed to fetch leads",
     });
