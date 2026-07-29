@@ -1,3 +1,4 @@
+import React from "react";
 import { ArrowLeft } from "lucide-react";
 
 const LeadDetailsHeader = ({name,onBack}) => {

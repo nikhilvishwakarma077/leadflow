@@ -1,7 +1,7 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AlertCircle, CheckCircle2 } from "lucide-react";
-
 import api from "../../services/api";
 
 import LeadDetailsHeader from "../../components/admin/lead-details/LeadDetailsHeader";

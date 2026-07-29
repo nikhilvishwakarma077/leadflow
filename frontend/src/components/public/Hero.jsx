@@ -1,8 +1,5 @@
-import {
-  ArrowRight,
-  CheckCircle2,
-  ChevronRight,
-} from "lucide-react";
+import React from "react";
+import {ArrowRight,CheckCircle2,ChevronRight} from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImg from "../../assets/hero.png"
 

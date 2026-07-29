@@ -1,3 +1,4 @@
+import React from "react";
 import LeadRow from "./LeadRow";
 
 const LeadsTable = ({ leads }) => {

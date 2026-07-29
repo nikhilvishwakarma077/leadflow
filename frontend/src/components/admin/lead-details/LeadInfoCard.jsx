@@ -1,3 +1,4 @@
+import React from "react";
 import { CalendarDays, Mail, User, Wallet } from "lucide-react";
 
 const LeadInfoCard = ({ lead }) => {

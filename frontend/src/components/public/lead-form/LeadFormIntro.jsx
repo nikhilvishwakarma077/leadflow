@@ -1,5 +1,5 @@
+import React from "react";
 import Benefit from "./Benefit";
-
 const LeadFormIntro = () => {
   return (
     <div className="flex flex-col justify-center">

@@ -1,7 +1,6 @@
-import Hero from "../../components/public/Hero";
+import React from "react";
 import Features from "../../components/public/Features";
-import Workflow from "../../components/public/Workflow";
-import FinalCTA from "../../components/public/FinalCTA";
+import Hero from "../../components/public/Hero";
 
 const Home = () => {
   return (

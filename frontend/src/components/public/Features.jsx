@@ -1,8 +1,5 @@
-import {
-  LayoutDashboard,
-  Search,
-  BarChart3,
-} from "lucide-react";
+import React from "react";
+import {LayoutDashboard,Search,BarChart3} from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const features = [

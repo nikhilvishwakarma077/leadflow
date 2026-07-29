@@ -1,5 +1,5 @@
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-
 import Home from "../pages/public/Home";
 import LeadForm from "../pages/public/LeadForm";
 import Login from "../pages/admin/Login";
