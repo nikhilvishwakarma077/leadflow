@@ -33,7 +33,6 @@ const useAuthStore = create((set) => ({
       admin: response.data.admin,
       isAuthenticated: true,
     });
-    console.log(response.data)
     return response.data;
   },
 

@@ -1,28 +1,29 @@
-import express from "express";
-import cors from "cors";
 import dotenv from "dotenv";
-import cookieParser from "cookie-parser";
-
+dotenv.config();
+import express from "express";
 import connectDB from "./config/db.js";
-import leadRoutes from "./routes/lead.routes.js"
 import authRoutes from "./routes/auth.routes.js";
-
+import leadRoutes from "./routes/lead.routes.js"
 import { errorHandler } from "./middleware/error.middleware.js";
 
-dotenv.config();
+import cors from "cors";
+import cookieParser from "cookie-parser";
 
-const app = express();
+
+const app = express(); 
 
 // Database connection
 connectDB();
 
-// Middleware
-app.use(
-  cors({
-    origin: process.env.CLIENT_URL,
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://leadflow-wine-iota.vercel.app",
+  ],
+  credentials: true
+}));
+
+
 app.use(express.json());
 app.use(cookieParser());
 
