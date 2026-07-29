@@ -1,7 +1,7 @@
 import React from "react";
 import Features from "../../components/public/Features";
 import Hero from "../../components/public/Hero";
-import Workflow from "../../components/public/Workflow";
+import WorkFlow from "../../components/public/WorkFlow";
 import FinalCTA from "../../components/public/FinalCTA";
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
 
       <Features />
 
-      <Workflow />
+      <WorkFlow />
 
       <FinalCTA />
     </>

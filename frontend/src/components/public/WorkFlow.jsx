@@ -28,7 +28,7 @@ const steps = [
   },
 ];
 
-const Workflow = () => {
+const WorkFlow = () => {
 
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -218,4 +218,4 @@ const Workflow = () => {
   );
 };
 
-export default Workflow;
+export default WorkFlow;
