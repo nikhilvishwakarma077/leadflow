@@ -1,8 +1,6 @@
 import mongoose from "mongoose";
 import Lead from "../models/lead.js";
 
-
-
 export const createLead = async (req, res) => {
   try {
     const { name, email, budgetRange, message } = req.body;
