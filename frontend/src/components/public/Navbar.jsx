@@ -12,9 +12,6 @@ const Navbar = () => {
           to="/"
           className="group flex items-center gap-2.5 rounded-full px-3 py-2"
         >
-          {/* <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#FF6B00] text-sm font-bold text-white transition-transform duration-300 group-hover:rotate-[-6deg]">
-            LF
-          </div> */}
 
           <span className="text-base font-bold tracking-[-0.03em] text-[#FFF7ED] md:text-lg">
             Lead<span className="text-[#FF6B00]">Flow</span>

@@ -6,7 +6,6 @@ const useAuthStore = create((set) => ({
   isAuthenticated: false,
   isLoading: true,
 
-  // Get currently logged-in admin
   getCurrentAdmin: async () => {
     try {
       const response = await api.get("/auth/me");
@@ -27,7 +26,6 @@ const useAuthStore = create((set) => ({
     }
   },
 
-  // Login
   login: async (credentials) => {
     const response = await api.post("/auth/login", credentials);
 
@@ -35,11 +33,10 @@ const useAuthStore = create((set) => ({
       admin: response.data.admin,
       isAuthenticated: true,
     });
-
+    console.log(response.data)
     return response.data;
   },
 
-  // Logout
   logout: async () => {
     try {
       await api.post("/auth/logout");

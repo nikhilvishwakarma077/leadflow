@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import useAuthStore from "../../store/authStore";
 
 const Login = () => {
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
   const { login } = useAuthStore();
 
   const [formData, setFormData] = useState({
@@ -14,7 +14,6 @@ const Login = () => {
   });
 
   const [error, setError] = useState("");
-
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -57,7 +56,7 @@ const Login = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#0D0D0D] px-6">
       <div className="w-full max-w-md">
-        {/* Logo */}
+
         <div className="mb-8 text-center">
           <h1 className="text-2xl font-bold tracking-tight text-white">
             Lead<span className="text-[#FF6B00]">Flow</span>
@@ -68,7 +67,6 @@ const Login = () => {
           </p>
         </div>
 
-        {/* Login Card */}
         <div className="rounded-2xl border border-white/10 bg-[#171717] p-8 shadow-2xl shadow-black/20">
           <div className="mb-8">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#FF6B00] text-white">
@@ -84,7 +82,6 @@ const Login = () => {
             </p>
           </div>
 
-          {/* Error */}
           {error && (
             <div className="mb-6 rounded-lg border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-400">
               {error}
@@ -92,7 +89,6 @@ const Login = () => {
           )}
 
           <form onSubmit={handleSubmit} className="space-y-5">
-            {/* Email */}
             <div>
               <label
                 htmlFor="email"
@@ -112,7 +108,6 @@ const Login = () => {
               />
             </div>
 
-            {/* Password */}
             <div>
               <label
                 htmlFor="password"
@@ -132,7 +127,6 @@ const Login = () => {
               />
             </div>
 
-            {/* Submit */}
             <button
               type="submit"
               disabled={loading}
@@ -140,10 +134,7 @@ const Login = () => {
             >
               {loading ? (
                 <>
-                  <Loader2
-                    size={18}
-                    className="animate-spin"
-                  />
+                  <Loader2 size={18} className="animate-spin" />
                   Signing in...
                 </>
               ) : (

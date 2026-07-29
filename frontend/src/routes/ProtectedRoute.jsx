@@ -2,12 +2,9 @@ import { Navigate, Outlet } from "react-router-dom";
 import useAuthStore from "../store/authStore";
 
 const ProtectedRoute = () => {
-  const {
-    isAuthenticated,
-    isLoading,
-  } = useAuthStore();
+  
+  const {isAuthenticated, isLoading} = useAuthStore();
 
-  // Wait for authentication check
   if (isLoading) {
     return (
       <div className="flex min-h-screen items-center justify-center">
@@ -18,12 +15,10 @@ const ProtectedRoute = () => {
     );
   }
 
-  // Not authenticated
   if (!isAuthenticated) {
     return <Navigate to="/admin/login" replace />;
   }
 
-  // Authenticated
   return <Outlet />;
 };
 
