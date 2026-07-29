@@ -2,7 +2,7 @@ import React from "react";
 import {ArrowRight,CheckCircle2,ChevronRight} from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImg from "../../assets/hero.png"
-
+ 
 const Hero = () => {
   return (
     <section className="relative  h-screen overflow-hidden bg-[#0A0A0A] text-white">
